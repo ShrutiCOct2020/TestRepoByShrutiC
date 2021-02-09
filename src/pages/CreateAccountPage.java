@@ -34,19 +34,19 @@ public class CreateAccountPage extends PredefinedActions {
 	}
 
 	private void selectBirthDate(String date) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("days")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("uniform-days"))).click();
 		Select select = new Select(driver.findElement(By.id("days")));
 		select.selectByValue(date);// 6
 	}
 
 	private void selectBirthMonth(String month) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("months")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("uniform-months"))).click();
 		Select select = new Select(driver.findElement(By.id("months")));
 		select.selectByValue(month);// "2"
 	}
 
 	private void selectBirthYear(String year) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("years")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("uniform-years"))).click();
 		Select select = new Select(driver.findElement(By.id("years")));
 		select.selectByValue(year);// "1997"
 	}
@@ -56,9 +56,7 @@ public class CreateAccountPage extends PredefinedActions {
 	}
 
 	private void enterAddress(String address) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("address1"))).sendKeys();// "650
-																								// Grassmere
-																								// park"
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("address1"))).sendKeys(address);
 	}
 
 	private void enterCity(String city) {
@@ -66,7 +64,7 @@ public class CreateAccountPage extends PredefinedActions {
 	}
 
 	private void selectState(String state) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("id_state")))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("uniform-id_state")))).click();
 		Select select = new Select(driver.findElement(By.id("id_state")));
 		select.selectByVisibleText(state);// "Tennessee"
 	}
